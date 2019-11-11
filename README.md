@@ -1,37 +1,22 @@
-## Welcome to GitHub Pages
+## Welcome to find taiwan toilet
 
-You can use the [editor on GitHub](https://github.com/kevin6449/find_taiwan_toilet/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This is Actions on Goolge find taiwan toilet project source code   
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### How to use
 
-### Markdown
+dialogflow / find_toilet.zip  is DialogFlow project , you can import to you project 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+find_wc folder is nodejs code for Cloud Run  
 
-```markdown
-Syntax highlighted code block
+Cloud Shell command
 
-# Header 1
-## Header 2
-### Header 3
+#---Building using Cloud Build-----
+gcloud config set project [project_name]
 
-- Bulleted
-- List
+gcloud builds submit --tag gcr.io/[project_name]/[image_name]
 
-1. Numbered
-2. List
+gcloud container images list
 
-**Bold** and _Italic_ and `Code` text
+docker run -d -p 8080:8080 gcr.io/[project_name]/[image_name]
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kevin6449/find_taiwan_toilet/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+gcloud beta run deploy --image gcr.io/[project_name]/[image_name]
